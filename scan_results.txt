@@ -1,0 +1,38 @@
+# Nmap 7.95 scan initiated Mon Sep 22 10:47:38 2025 as: /usr/lib/nmap/nmap -sS -sV --script vuln -oN scan_results.txt 172.20.10.0/28
+Nmap scan report for 172.20.10.1
+Host is up (0.0015s latency).
+Not shown: 996 closed tcp ports (reset)
+PORT      STATE SERVICE      VERSION
+21/tcp    open  tcpwrapped
+53/tcp    open  domain       (generic dns response: NXDOMAIN)
+| fingerprint-strings: 
+|   DNSVersionBindReqTCP: 
+|     version
+|     bind
+|     root-servers
+|     nstld
+|_    verisign-grs
+49152/tcp open  tcpwrapped
+62078/tcp open  iphone-sync?
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port53-TCP:V=7.95%I=7%D=9/22%Time=68D0DC09%P=x86_64-pc-linux-gnu%r(DNSV
+SF:ersionBindReqTCP,6B,"\0i\0\x06\x81\x83\0\x01\0\0\0\x01\0\0\x07version\x
+SF:04bind\0\0\x10\0\x01\0\0\x06\0\x01\0\0\x0e\x10\0@\x01a\x0croot-servers\
+SF:x03net\0\x05nstld\x0cverisign-grs\x03com\0x\xb4t\x05\0\0\x07\x08\0\0\x0
+SF:3\x84\0\t:\x80\0\x01Q\x80");
+MAC Address: 86:B1:E4:91:DD:64 (Unknown)
+
+Nmap scan report for 172.20.10.3
+Host is up (0.0014s latency).
+Not shown: 999 filtered tcp ports (no-response)
+PORT     STATE SERVICE VERSION
+2022/tcp open  down?
+MAC Address: 86:B1:E4:19:95:84 (Unknown)
+
+Nmap scan report for 172.20.10.2
+Host is up (0.0000030s latency).
+All 1000 scanned ports on 172.20.10.2 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Sep 22 10:49:27 2025 -- 16 IP addresses (3 hosts up) scanned in 108.79 seconds
