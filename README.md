@@ -23,26 +23,23 @@ This repository contains the results of network scanning experiments performed u
    ip addr show
 Output showed my IP: 172.20.10.2/28, which means my subnet is 172.20.10.0/28.
 
-2. Perform TCP SYN Scan
-
-To detect live hosts and open ports in the subnet, I ran:
-
-sudo nmap -sS 172.20.10.0/28
+2. **Perform TCP SYN Scan**
+   - To detect live hosts and open ports in the subnet, I ran:
+   ```bash
+   sudo nmap -sS 172.20.10.0/28
+This scan helped identify which IPs were active and which ports were open.
 
 
 This scan detected which IPs were active and which ports were open.
 
-3. Service & Version Detection
+3. **Service & Version Detection**
+   - To identify the services running on open ports, I ran:
+   ```bash
+   sudo nmap -sV 172.20.10.0/28
+Nmap returned the service names and versions where possible.
 
-To identify the services running on the open ports, I ran:
-
-sudo nmap -sV 172.20.10.0/28
-
-4. Vulnerability Scan Using Nmap Scripts
-
-To check for known vulnerabilities, I combined the SYN scan, version detection, and Nmap vulnerability scripts:
-
-sudo nmap -sS -sV --script vuln 172.20.10.0/28 -oN scan_results.txt
-
-
-The results were saved to scan_results.txt.
+4. **Vulnerability Scan Using Nmap Scripts**
+   - To check for known vulnerabilities, I combined SYN scan, version detection, and Nmap scripts:
+   ```bash
+   sudo nmap -sS -sV --script vuln 172.20.10.0/28 -oN scan_results.txt
+Results were saved to scan_results.txt for documentation.
