@@ -16,7 +16,33 @@ This repository contains the results of network scanning experiments performed u
 
 ## 💻 Commands Used
 
-All scans were performed in a **controlled environment**. The exact command to generate these results:
+
+1. **Identify the Local IP and Subnet**
+   - First, I ran the following command to find my machine’s IP address and subnet:
+   ```bash
+   ip addr show
+Output showed my IP: 172.20.10.2/28, which means my subnet is 172.20.10.0/28.
+
+2. **Perform TCP SYN Scan**
+
+To detect live hosts and open ports in the subnet, I ran:
+```bash
+  sudo nmap -sS 172.20.10.0/28
+This scan detected which IPs were active and which ports were open.
+
+3. **Service & Version Detection**
+
+To identify the services running on the open ports, I ran:
 
 ```bash
+
+sudo nmap -sV 172.20.10.0/28
+
+4 **Vulnerability Scan Using Nmap Scripts**
+
+To check for known vulnerabilities, I combined the SYN scan, version detection, and Nmap vulnerability scripts:
+
+```bash
+
 sudo nmap -sS -sV --script vuln 172.20.10.0/28 -oN scan_results.txt
+The results were saved to scan_results.txt
