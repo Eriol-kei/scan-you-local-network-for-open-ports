@@ -29,9 +29,6 @@ Output showed my IP: 172.20.10.2/28, which means my subnet is 172.20.10.0/28.
    sudo nmap -sS 172.20.10.0/28
 This scan helped identify which IPs were active and which ports were open.
 
-
-This scan detected which IPs were active and which ports were open.
-
 3. **Service & Version Detection**
    - To identify the services running on open ports, I ran:
    ```bash
