@@ -1,19 +1,22 @@
 # scan-you-local-network-for-open-ports
 learn to discover open ports on devices in your local network to understand network experience
 
-This repository contains the results of network scanning experiments performed using [Nmap](https://nmap.org/).
+This repository contains the results of network scanning experiments performed using [Nmap](https://nmap.org/) on a controlled lab network.
 
-## 📌 What’s Inside
-- `scan_results.txt` → Text output of the Nmap scan
+---
 
-## 🛠 Tools Used
-- **Nmap** for network scanning
-- **Wireshark** (optional) for packet capture
+## 📌 Overview
 
-## ⚠️ Disclaimer
-These scan results are from **my own network / lab environment**.  
-They are shared **only for educational and research purposes**.  
-Do not use these techniques to scan systems without proper authorization. Unauthorized scanning may be illegal.
+- **Subnet scanned:** 172.20.10.0/28 (16 IPs)
+- **Hosts detected:** 3
+- **Purpose:** Educational and research purposes only
+- **Tools used:** Nmap, optionally Wireshark
 
-## 📜 License
-This project is licensed under the **MIT License** – feel free to use and share with attribution.
+---
+
+## 💻 Commands Used
+
+All scans were performed in a **controlled environment**. The exact command to generate these results:
+
+```bash
+sudo nmap -sS -sV --script vuln 172.20.10.0/28 -oN scan_results.txt
